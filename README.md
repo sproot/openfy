@@ -21,7 +21,7 @@ Forwarding                    https://b760-85-238-96-166.eu.ngrok.io -> http://l
 ```
 
 2. After that, please open a `.env` file and change the value of the  `NGROK_URL_HERE` variable to the url listed above (e.g. `https://b760-85-238-96-166.eu.ngrok.io`). Then please change and change the `YOUR_API_KEY_HERE` string with an actual Api Key.
-Here you can find information on how to get the API key: [Creating an API Key](#)
+Here you can find information on how to get the API key: [Creating an API Key](https://proficonf.dev/docs/creating-meetings-programmatically#creating-an-api-key)
 
 3. Next let's install necessary npm packages:
 

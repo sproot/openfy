@@ -8,7 +8,7 @@ app.use(express.static('.'));
 app.use(express.json());
 
 // We are using REST API and axios library to create a new meeting
-// Get more information on this by following this link: ...
+// Get more information on this by following this link: https://proficonf.dev/docs/creating-meetings-programmatically
 app.post('/create-meeting', async (_, res) => {
     try {
         const response = await axios.post('https://api.proficonf.com/v1/meetings', {
@@ -32,7 +32,7 @@ app.post('/create-meeting', async (_, res) => {
 });
 
 // In order to join a meeting as a host (owner) we need get an appropriate token and then use it in iframe.
-// You can read more about participant-tokens here: ...
+// You can read more about participant-tokens here: https://proficonf.dev/docs/participant-tokens
 app.post('/get-token-for-host/:meetingId', async (req, res) => {
     try {
         const response = await axios.post('https://api.proficonf.com/v1/participant-tokens', {
@@ -66,7 +66,6 @@ app.post('/webhooks', (req, res) => {
 
     res.sendStatus(200);
 });
-
 
 app.listen(process.env.HTTP_PORT, () => {
     console.log(`Server is now listening on port ${process.env.HTTP_PORT}`);

@@ -29,8 +29,6 @@
                 axios.post('/create-meeting').then((response) => {
                     const meeting = response.data;
 
-                    console.log('meeting', meeting);
-
                     const joinUrlElement = document.getElementById('joinUrl');
                     joinUrlElement.href = meeting.url;
                     joinUrlElement.innerText = meeting.url;
@@ -45,9 +43,7 @@
                         // We need get token from backend to join the meeting
                         // as a participant wotn non-default role ('viewer' in our case)
                         axios.post(`/get-token-for-host/${meeting.id}`).then(({ data }) => {
-                            console.log('token', data.token);
-
-                            // For lecturer we just need to pass the token
+                            // For the lecturer we just need to pass the token
                             initializeIframe(meeting.url, data.token);
                         });
                     });
